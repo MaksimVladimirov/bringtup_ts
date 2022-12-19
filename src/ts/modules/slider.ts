@@ -19,7 +19,7 @@ export class Slider {
             this.slideIndex = this.slides.length;
         }
 
-        this.slides.forEach((slide: HTMLElement ) => {
+    [...this.slides].forEach((slide: any) => {
             slide.style.display = 'none';
         });
 
