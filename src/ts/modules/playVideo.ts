@@ -2,9 +2,9 @@ export class VideoPlayer {
   overlay: HTMLElement;
   close: HTMLElement;
   btns: NodeListOf<HTMLElement>;
-  player: any;
+  player!: YT.Player;
   constructor(triggers: string, overlay: string) {
-    this.btns = document.querySelectorAll(triggers) ;
+    this.btns = document.querySelectorAll(triggers);
     this.overlay = document.querySelector(overlay) as HTMLElement;
     this.close = this.overlay.querySelector(".close") as HTMLElement;
   }
@@ -44,7 +44,7 @@ export class VideoPlayer {
     const tag = document.createElement("script");
 
     tag.src = "https://www.youtube.com/iframe_api";
-    const firstScriptTag:any = document.getElementsByTagName("script")[0];
+    const firstScriptTag: any = document.getElementsByTagName("script")[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     this.bindTriggers();
