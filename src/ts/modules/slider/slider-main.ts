@@ -1,9 +1,9 @@
 import { Slider } from "./slider";
 
 export class MainSlider extends Slider {
-    hanson: any
-  constructor(page?:any, btns?:string) {
-    super({page, btns});
+  hanson: any;
+  constructor(page?: any, btns?: string) {
+    super({ page, btns });
   }
 
   showSlides(n: number) {
@@ -29,14 +29,14 @@ export class MainSlider extends Slider {
       }
     } catch (e) {}
 
-    this.slides.forEach((slide:any) => {
+    this.slides.forEach((slide: any) => {
       slide.style.display = "none";
     });
 
     this.slides[this.slideIndex - 1].style.display = "block";
   }
 
-  plusSlides(n:number) {
+  plusSlides(n: number) {
     this.showSlides((this.slideIndex += n));
   }
 
