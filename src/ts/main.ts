@@ -1,10 +1,11 @@
-import { Slider } from "./modules";
+import { MainSlider } from "./modules";
 import { VideoPlayer } from "./modules";
 
-window.addEventListener("DOMContentLoaded", () => {
-  const slider = new Slider(".page", ".next");
+window.addEventListener('DOMContentLoaded', () => {
+  
+  const slider = new MainSlider({btns: '.next', page: '.page'});
   slider.render();
 
-  const player = new VideoPlayer(".showup .play", ".overlay");
+  const player = new VideoPlayer('.showup .play', '.overlay');
   player.init();
 });
