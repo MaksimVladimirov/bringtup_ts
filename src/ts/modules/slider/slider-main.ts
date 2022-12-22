@@ -2,8 +2,8 @@ import { Slider } from "./slider";
 
 export class MainSlider extends Slider {
   hanson: any;
-  constructor(page?: any, btns?: string) {
-    super({ page, btns });
+  constructor({ container, btns }: { container: string; btns: any }) {
+    super({ container, btns });
   }
 
   showSlides(n: number) {
@@ -29,11 +29,11 @@ export class MainSlider extends Slider {
       }
     } catch (e) {}
 
-    this.slides.forEach((slide: any) => {
+    Array.from(this.slides).forEach((slide: any) => {
       slide.style.display = "none";
     });
 
-    this.slides[this.slideIndex - 1].style.display = "block";
+    (this.slides[this.slideIndex - 1] as HTMLElement).style.display = "block";
   }
 
   plusSlides(n: number) {
@@ -45,7 +45,7 @@ export class MainSlider extends Slider {
       this.hanson = document.querySelector(".hanson");
     } catch (e) {}
 
-    this.btns.forEach((item: any) => {
+    Array.from(this.btns).forEach((item: any) => {
       item.addEventListener("click", () => {
         this.plusSlides(1);
       });
