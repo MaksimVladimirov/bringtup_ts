@@ -1,8 +1,10 @@
 export class VideoPlayer {
+  
   overlay: HTMLElement;
   close: HTMLElement;
   btns: NodeListOf<HTMLElement>;
   player!: YT.Player;
+
   constructor(triggers: string, overlay: string) {
     this.btns = document.querySelectorAll(triggers);
     this.overlay = document.querySelector(overlay) as HTMLElement;
