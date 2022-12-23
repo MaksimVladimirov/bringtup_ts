@@ -45,7 +45,7 @@ export class MainSlider extends Slider {
       this.hanson = document.querySelector(".hanson");
     } catch (e) {}
 
-    Array.from(this.btns).forEach((item: any) => {
+    Array.from(this.btns ??[]).forEach((item: any) => {
       item.addEventListener("click", () => {
         this.plusSlides(1);
       });
