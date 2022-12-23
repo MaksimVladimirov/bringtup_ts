@@ -15,9 +15,7 @@ export class Form {
   }
 
   clearInputs() {
-    this.inputs.forEach((item) => {
-      item.value = "";
-    });
+    this.inputs.forEach((item) => {item.value = ""});
   }
 
   checkMailInput() {
@@ -35,7 +33,7 @@ export class Form {
   
 
   async postData(url: string, data: string) {
-    let res = await fetch(url, {
+    const res = await fetch(url, {
       method: "POST",
       body: data,
     });
