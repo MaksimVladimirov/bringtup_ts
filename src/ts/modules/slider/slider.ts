@@ -1,12 +1,30 @@
 export class Slider {
-  page: any;
-  slides: NodeListOf<HTMLElement>;
+  container: HTMLElement;
+  slides: HTMLCollection;
   btns: NodeListOf<HTMLElement>;
+  prev: HTMLElement;
+  next: HTMLElement;
   slideIndex: number;
-  constructor({ page = "", btns = "", next = "", prev = "" } = {}) {
-    this.page = document.querySelector(page);
-    this.slides = this.page.children;
+  activeClass: string;
+  animate: boolean;
+  autoplay: boolean;
+  constructor({
+    container = "",
+    btns = "",
+    next = "",
+    prev = "",
+    activeClass = "",
+    animate = false,
+    autoplay = false,
+  } = {}) {
+    this.container = document.querySelector(container) as HTMLElement;
+    this.slides = this.container.children;
     this.btns = document.querySelectorAll(btns);
+    this.next = document.querySelector(next) as HTMLElement;
+    this.prev = document.querySelector(prev) as HTMLElement;
+    this.activeClass = activeClass;
+    this.animate = animate;
+    this.autoplay = autoplay;
     this.slideIndex = 1;
   }
 }
