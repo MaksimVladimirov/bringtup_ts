@@ -27,7 +27,10 @@ export class VideoPlayer {
 
       btn.addEventListener("click", () => {
         if (
-          !btn.closest(".module__video-item") || btn.closest(".module__video-item").getAttribute("data-disabled") !== "true") {
+          !btn.closest(".module__video-item") ||
+          btn.closest(".module__video-item").getAttribute("data-disabled") !==
+            "true"
+        ) {
           this.activeBtn = btn;
 
           if (document.querySelector("iframe#frame")) {
@@ -73,23 +76,15 @@ export class VideoPlayer {
       ).nextElementSibling;
       const playBtn = this.activeBtn.querySelector("svg").cloneNode(true);
 
-      if (state.data === 0) {
-        if (
-          blockedELem
-            .querySelector(".play__circle")
-            .classList.contains("closed")
-        ) {
-          blockedELem.querySelector(".play__circle").classList.remove("closed");
-          blockedELem.querySelector("svg").remove();
-          blockedELem.querySelector(".play__circle").appendChild(playBtn);
-          blockedELem.querySelector(".play__text").textContent = "play video";
-          blockedELem
-            .querySelector(".play__text")
-            .classList.remove("attention");
-          blockedELem.style.opacity = 1;
-          blockedELem.style.filter = "none";
-          blockedELem.setAttribute("data-disabled", "false");
-        }
+      if ( state.data === 0 && blockedELem.querySelector(".play__circle").classList.contains("closed")) {
+        blockedELem.querySelector(".play__circle").classList.remove("closed");
+        blockedELem.querySelector("svg").remove();
+        blockedELem.querySelector(".play__circle").appendChild(playBtn);
+        blockedELem.querySelector(".play__text").textContent = "play video";
+        blockedELem.querySelector(".play__text").classList.remove("attention");
+        blockedELem.style.opacity = 1;
+        blockedELem.style.filter = "none";
+        blockedELem.setAttribute("data-disabled", "false");
       }
     } catch (e) {}
   }
