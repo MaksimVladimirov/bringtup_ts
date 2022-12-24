@@ -30,8 +30,6 @@ export class Form {
     });
   }
 
-  
-
   async postData(url: string, data: string) {
     const res = await fetch(url, {
       method: "POST",
