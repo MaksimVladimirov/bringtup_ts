@@ -1,7 +1,7 @@
 export class Slider {
   container: HTMLElement;
   slides: HTMLCollection;
-  btns: NodeListOf<HTMLElement>  | null;
+  btns: NodeListOf<HTMLElement> | null;
   prev: HTMLElement | null;
   next: HTMLElement | null;
   slideIndex: number;
