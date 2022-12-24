@@ -4,6 +4,8 @@ import {
   Difference,
   MiniSlider,
   VideoPlayer,
+  ShowInfo,
+  Download,
 } from "./modules";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -49,4 +51,6 @@ window.addEventListener("DOMContentLoaded", () => {
   new VideoPlayer(".module__video-item .play", ".overlay").init();
   new Difference(".officerold", ".officernew", ".officer__card-item").init();
   new Form(".form").init();
+  new ShowInfo(".plus__content0").init();
+  new Download(".download").init();
 });
